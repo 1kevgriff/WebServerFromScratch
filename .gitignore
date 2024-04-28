@@ -396,3 +396,25 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Astro support
+# Astro build output
+dist/
+
+# Astro cache
+node_modules/
+.cache/
+
+# Astro environment variables
+.env
+.env.local
+.env.*.local
+
+# Astro log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Astro specific
+astro.config.mjs
+# End Generation Here
