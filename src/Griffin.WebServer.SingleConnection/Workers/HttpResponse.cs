@@ -61,7 +61,11 @@ public class HttpResponse
         // does it exist?
         if (!File.Exists(path))
         {
-            return NotFound(httpRequest);
+            path = Path.Combine(path, "index.html");
+            if (!File.Exists(path))
+            {
+                return NotFound(httpRequest);
+            }
         }
 
         // read the file
