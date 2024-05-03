@@ -39,7 +39,7 @@ public class HttpRequest
         if (CompressionRequest)
         {
             var acceptedEncodings = Headers["Accept-Encoding"].Split(',').Select(s => s.Trim()).ToArray();
-            CompressionType = acceptedEncodings.FirstOrDefault(enc => enc == "gzip" || enc == "deflate" || enc == "br");
+            CompressionType = acceptedEncodings.FirstOrDefault(enc => /*enc == "gzip" ||*/ enc == "deflate" || enc == "br");
         }
         else
         {
