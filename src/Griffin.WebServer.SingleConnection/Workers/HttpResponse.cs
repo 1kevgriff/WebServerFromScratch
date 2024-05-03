@@ -5,7 +5,7 @@ public class HttpResponse
     public int StatusCode { get; set; }
     public string Body { get; set; }
     public string ContentType { get; set; }
-    public int ContentLength =>  string.IsNullOrWhiteSpace(Body) ? 0 : Body.Length + 1; // +1 for newline
+    public int ContentLength =>  string.IsNullOrWhiteSpace(Body) ? 0 : Body.Length + 4; // +2 for newline
 
     // Utc Now in format: Mon, 27 Jul 2009 12:28:53 GMT
     public string ResponseDate => $"{DateTimeOffset.UtcNow:R}";
@@ -81,7 +81,7 @@ public class HttpResponse
 
         var response = new HttpResponse()
         {
-            StatusCode = 405,
+            StatusCode = 200,
             Request = httpRequest,
             Body = body,
             ContentType = contentType

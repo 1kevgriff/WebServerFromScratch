@@ -8,8 +8,8 @@ namespace Griffin.WebServer.Workers;
 
 public class ConnectionManagerWorker(IConfiguration configuration, ILogger<ConnectionManagerWorker> logger) : BackgroundService
 {
-    private int _port = 4321;
-    private string _clientPath = configuration["ClientPath"] ?? throw new ArgumentNullException($"ClientPath");
+    private readonly int _port = 4321;
+    private readonly string _clientPath = configuration["ClientPath"] ?? throw new ArgumentNullException($"ClientPath");
     private const int MaxConnections = 10;
     
     protected override async Task ExecuteAsync(CancellationToken cancellationToken)
